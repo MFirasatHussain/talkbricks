@@ -1,0 +1,35 @@
+tables:
+  - name: campaign_performance
+    full_name: main.marketing.campaign_performance
+    description: Daily campaign performance metrics for advertising analysis.
+    business_definition: One row represents campaign performance for a single campaign on a single air date.
+    columns:
+      - name: campaign_id
+        type: string
+        description: Unique identifier for the campaign.
+        business_definition: Internal campaign key used to join with other marketing tables.
+      - name: advertiser_name
+        type: string
+        description: Name of the advertiser.
+        business_definition: Human-readable advertiser label used for reporting.
+      - name: air_date
+        type: date
+        description: Date the campaign performance was recorded.
+        business_definition: Reporting date for the row.
+      - name: impressions
+        type: integer
+        description: Total number of ad impressions.
+        business_definition: Count of times the ad was shown.
+      - name: spend
+        type: decimal
+        description: Total media spend in USD.
+        business_definition: Dollars spent on the campaign for the given date.
+      - name: clicks
+        type: integer
+        description: Total number of clicks.
+        business_definition: Number of ad clicks recorded for the campaign.
+    example_questions:
+      - What was the total spend by advertiser last 30 days?
+      - Show impressions and clicks for each campaign.
+      - Which advertisers had the highest impressions this week?
+
